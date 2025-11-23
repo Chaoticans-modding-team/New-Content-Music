@@ -22,7 +22,9 @@ function callOnPlanetChange(pl) {
   switch(pl) {
     case (Planets.serpulo):
     case (Planets.erekir):
-        Vars.control.sound.reload();
+        Vars.contro.sound.ambientMusic = Seq.with(Musics.game1, Musics.game3, Musics.game6, Musics.game8, Musics.game9, Musics.fine);
+        Vars.contro.sound.darkMusic = Seq.with(Musics.game2, Musics.game5, Musics.game7, Musics.game4);
+        Vars.contro.sound.bossMusic = Seq.with(Musics.boss1, Musics.boss2, Musics.game2, Musics.game5);
         Vars.control.sound.ambientMusic.add(day2);
         Vars.control.sound.ambientMusic.add(fine2);
         Vars.control.sound.ambientMusic.add(cosmos);
