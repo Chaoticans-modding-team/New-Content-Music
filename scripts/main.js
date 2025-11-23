@@ -27,11 +27,8 @@ function callOnPlanetChange(pl) {
         Vars.control.sound.bossMusic = Seq.with(Musics.boss1, Musics.boss2, Musics.game2, Musics.game5);
         Vars.control.sound.ambientMusic.add(day2);
         Vars.control.sound.ambientMusic.add(fine2);
-        Vars.control.sound.ambientMusic.add(cosmos);
         Vars.control.sound.darkMusic.add(day3);
         Vars.control.sound.darkMusic.add(day4);
-        Vars.control.sound.darkMusic.add(game10);
-        Vars.control.sound.darkMusic.add(cosmos);
         Vars.control.sound.bossMusic.add(boss3);
         Vars.control.sound.bossMusic.add(seq); //duck it, seq is boss music
         Vars.control.sound.darkMusic.add(seq);
