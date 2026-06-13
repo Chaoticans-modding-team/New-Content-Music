@@ -7,9 +7,6 @@
     '''
   author: Rylid Umil
   version: 8x6
-  dependencies: [
-    newunits
-  ]
   minGameVersion: 147
   subtitle: I love music
   hidden: true
