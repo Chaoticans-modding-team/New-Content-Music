@@ -5,14 +5,11 @@ mod.meta.description = Core.bundle.get("mod.description");
 //is this relevant?^^^
 // special thanks to meep for the help!!
 */
-let day2 = Vars.tree.loadMusic("day2"); //new-world creepy vibes like / alternate
-let day3 = Vars.tree.loadMusic("day3"); //ye
-let day4 = Vars.tree.loadMusic("day4"); //ye
-let seq = Vars.tree.loadMusic("seq"); //seq
-let game10 = Vars.tree.loadMusic("game10"); //fanmade
-let boss3 = Vars.tree.loadMusic("boss3"); //fanmade boss
-let fine2 = Vars.tree.loadMusic("fine2"); //ye
-let cosmos = Vars.tree.loadMusic("cosmos"); //ye
+function mus(e) {
+  return Vars.tree.loadMusic(e);
+}
+var newcontent = Mods.getMod("newunits") === null;
+var clexon = newcontent ? Vars.content.planet("newunits-clexon") : null;
 function clearMusic() {
   Vars.control.sound.ambientMusic = Seq.with();
   Vars.control.sound.darkMusic = Seq.with();
@@ -24,24 +21,31 @@ function callOnPlanetChange(pl) {
     case (Planets.erekir):
         Vars.control.sound.ambientMusic = Seq.with(Musics.game1, Musics.game3, Musics.game6, Musics.game8, Musics.game9, Musics.fine);
         Vars.control.sound.darkMusic = Seq.with(Musics.game2, Musics.game5, Musics.game7, Musics.game4);
-        Vars.control.sound.bossMusic = Seq.with(Musics.boss1, Musics.boss2, Musics.game2, Musics.game5);
-        Vars.control.sound.ambientMusic.add(day2);
-        Vars.control.sound.ambientMusic.add(fine2);
-        Vars.control.sound.darkMusic.add(day3);
-        Vars.control.sound.darkMusic.add(day4);
-        Vars.control.sound.bossMusic.add(boss3);
-        Vars.control.sound.bossMusic.add(seq); //duck it, seq is boss music
-        Vars.control.sound.darkMusic.add(seq);
+        Vars.control.sound.bossMusic = Seq.with(Musics.boss1, Musics.boss2, Musics.game2);
+        Vars.control.sound.ambientMusic.add(mus("day2"));
+        Vars.control.sound.ambientMusic.add(mus("fine2"));
+        Vars.control.sound.darkMusic.add(mus("day3"));
+        Vars.control.sound.darkMusic.add(mus("day4"));
+        Vars.control.sound.bossMusic.add(mus("boss3"));
+        Vars.control.sound.bossMusic.add(mus("seq"));
+        Vars.control.sound.darkMusic.add(mus("seq"));
+        if(!newcontent) {
+          Vars.control.sound.ambientMusic.add(mus("cosmos"));
+          Vars.control.sound.ambientMusic.add(mus("day3"));
+          Vars.control.sound.ambientMusic.add(mus("day4"));
+          Vars.control.sound.darkMusic.add(mus("cosmos"));
+          Vars.control.sound.darkMusic.add(mus("game10"));
+        }
         return;
-      case(Vars.content.planet("newunits-clexon")):
+      case(clexon)
         clearMusic();
-        Vars.control.sound.ambientMusic.add(cosmos);
-        Vars.control.sound.ambientMusic.add(day3);
-        Vars.control.sound.ambientMusic.add(day4);
-        Vars.control.sound.darkMusic.add(cosmos);
-        Vars.control.sound.darkMusic.add(game10);
-        Vars.control.sound.darkMusic.add(seq);
-        Vars.control.sound.bossMusic.add(seq);
+        Vars.control.sound.ambientMusic.add(mus("cosmos"));
+        Vars.control.sound.ambientMusic.add(mus("day3"));
+        Vars.control.sound.ambientMusic.add(mus("day4"));
+        Vars.control.sound.darkMusic.add(mus("cosmos"));
+        Vars.control.sound.darkMusic.add(mus("game10"));
+        Vars.control.sound.darkMusic.add(mus("seq"));
+        Vars.control.sound.bossMusic.add(mus("seq"));
         return;
   };
 };
