@@ -37,7 +37,7 @@ function callOnPlanetChange(pl) {
           Vars.control.sound.darkMusic.add(mus("game10"));
         }
         return;
-      case(clexon)
+      case(clexon):
         clearMusic();
         Vars.control.sound.ambientMusic.add(mus("cosmos"));
         Vars.control.sound.ambientMusic.add(mus("day3"));
