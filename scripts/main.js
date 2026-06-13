@@ -8,7 +8,7 @@ mod.meta.description = Core.bundle.get("mod.description");
 function mus(e) {
   return Vars.tree.loadMusic(e);
 }
-var newcontent = Mods.getMod("newunits") === null;
+var newcontent = Vars.mods.locateMod("newunits") != null;
 var clexon = newcontent ? Vars.content.planet("newunits-clexon") : null;
 function clearMusic() {
   Vars.control.sound.ambientMusic = Seq.with();
