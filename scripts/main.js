@@ -18,6 +18,7 @@ function clearMusic() {
 function callOnPlanetChange(pl) {
   switch(pl) {
     case (Planets.serpulo):
+    case (Planets.sun): //So apparently the "<Any>" option in Mindustry sets the planet to the sun... wonderful.
     case (Planets.erekir):
         Vars.control.sound.ambientMusic = Seq.with(Musics.game1, Musics.game3, Musics.game6, Musics.game8, Musics.game9, Musics.fine);
         Vars.control.sound.darkMusic = Seq.with(Musics.game2, Musics.game5, Musics.game7, Musics.game4);
