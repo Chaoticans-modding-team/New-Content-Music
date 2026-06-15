@@ -32,8 +32,6 @@ function callOnPlanetChange(pl) {
         Vars.control.sound.darkMusic.add(mus("seq"));
         if(!newcontent) {
           Vars.control.sound.ambientMusic.add(mus("cosmos"));
-          Vars.control.sound.ambientMusic.add(mus("day3"));
-          Vars.control.sound.ambientMusic.add(mus("day4"));
           Vars.control.sound.darkMusic.add(mus("cosmos"));
           Vars.control.sound.darkMusic.add(mus("game10"));
         }
