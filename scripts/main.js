@@ -36,7 +36,7 @@ function callOnPlanetChange(pl) {
           Vars.control.sound.darkMusic.add(mus("game10"));
         }
         return;
-      case(clexon):
+      case(Vars.content.planet("newunits-clexon")):
         clearMusic();
         Vars.control.sound.ambientMusic.add(mus("cosmos"));
         Vars.control.sound.ambientMusic.add(mus("day3"));
