@@ -9,7 +9,11 @@ function mus(e) {
   return Vars.tree.loadMusic(e);
 }
 var newcontent = Vars.mods.locateMod("newunits") != null;
-var clexon = newcontent ? Vars.content.planet("newunits-clexon") : null;
+if (typeof Vars.content.planet("newunits-clexon") === "undefined") {
+  var clexon = null;
+} else {
+  var clexon = Vars.content.planet("newunits-clexon");
+}
 function clearMusic() {
   Vars.control.sound.ambientMusic = Seq.with();
   Vars.control.sound.darkMusic = Seq.with();
@@ -36,7 +40,7 @@ function callOnPlanetChange(pl) {
           Vars.control.sound.darkMusic.add(mus("game10"));
         }
         return;
-      case(Vars.content.planet("newunits-clexon")):
+      case(clexon):
         clearMusic();
         Vars.control.sound.ambientMusic.add(mus("cosmos"));
         Vars.control.sound.ambientMusic.add(mus("day3"));
